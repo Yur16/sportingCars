@@ -1,48 +1,22 @@
 import React from 'react';
 
+import { LoadCars } from '../../services/api';
+
 import { Container, Select, Car, CarImage, CarName } from './styles';
 
 export default function Main() {
+
+  const data = LoadCars();
+
   return (
     <Container>
       <Select>Selecione um carro</Select>
-
-      <Car>
-        <CarImage source={{ 
-          uri: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/1-porsche-cayman-gt4-2019-fd-hero-front.jpg?itok=PzqJhpFx', 
-        }} />
-        <CarName>Porsche Cayman GT4</CarName>
-      </Car>
-      <Car>
-        <CarImage source={{ 
-          uri: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/1-porsche-cayman-gt4-2019-fd-hero-front.jpg?itok=PzqJhpFx', 
-        }} />
-        <CarName>Porsche Cayman GT4</CarName>
-      </Car>
-      <Car>
-        <CarImage source={{ 
-          uri: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/1-porsche-cayman-gt4-2019-fd-hero-front.jpg?itok=PzqJhpFx', 
-        }} />
-        <CarName>Porsche Cayman GT4</CarName>
-      </Car>
-      <Car>
-        <CarImage source={{ 
-          uri: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/1-porsche-cayman-gt4-2019-fd-hero-front.jpg?itok=PzqJhpFx', 
-        }} />
-        <CarName>Porsche Cayman GT4</CarName>
-      </Car>
-      <Car>
-        <CarImage source={{ 
-          uri: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/1-porsche-cayman-gt4-2019-fd-hero-front.jpg?itok=PzqJhpFx', 
-        }} />
-        <CarName>Porsche Cayman GT4</CarName>
-      </Car>
-      <Car>
-        <CarImage source={{ 
-          uri: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/1-porsche-cayman-gt4-2019-fd-hero-front.jpg?itok=PzqJhpFx', 
-        }} />
-        <CarName>Porsche Cayman GT4</CarName>
-      </Car>
+      {data.map(car => (
+        <Car key={car.name}>
+          <CarImage source={{ uri: car.image }} />
+          <CarName>{car.name}</CarName>
+        </Car>
+      ))}
     </Container>
   );
 }
