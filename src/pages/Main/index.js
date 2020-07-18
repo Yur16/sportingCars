@@ -2,17 +2,16 @@ import React from 'react';
 
 import { LoadCars } from '../../services/api';
 
-import { Container, Select, Car, CarImage, CarName } from './styles';
+import { Container, Car, CarImage, CarName } from './styles';
 
-export default function Main() {
+export default function Main({ navigation }) {
 
   const data = LoadCars();
 
   return (
     <Container>
-      <Select>Selecione um carro</Select>
       {data.map(car => (
-        <Car key={car.name}>
+        <Car key={car.name} onPress={() => navigation.navigate('Specs')}>
           <CarImage source={{ uri: car.image }} />
           <CarName>{car.name}</CarName>
         </Car>

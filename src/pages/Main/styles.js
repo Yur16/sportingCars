@@ -11,13 +11,13 @@ export const Select = styled.Text`
   font-weight: bold;
   margin: ${Constants.statusBarHeight + 10}px 0 15px 15px;
 `;
-export const Car = styled.View`
+export const Car = styled.TouchableOpacity`
   width: 100%;
   height: 200px;
 `;
 export const CarImage = styled.Image`
   flex: 1;
-  opacity: 0.8;
+  opacity: 0.6;
 `;
 export const CarName = styled.Text`
   font-size: 22px;
