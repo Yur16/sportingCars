@@ -11,20 +11,17 @@ function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Main" component={Main} options={{
-          headerTitle: 'Selecione um carro',
-          headerTintColor: '#fff',
-          headerStyle: {
-            backgroundColor: '#000',
-          }
-        }} />
-        <Stack.Screen name="Specs" component={Specs} options={{
-          headerTitle: 'Especificação',
-          headerTintColor: '#fff',
-          headerStyle: {
-            backgroundColor: '#000',
-          }
-        }} />
+        <Stack.Screen 
+          name="Main" 
+          component={Main} 
+          options={{
+            title: '',
+            headerTintColor: '#fff',
+            headerStyle: {
+              backgroundColor: '#000',
+            }
+          }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

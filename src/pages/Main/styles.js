@@ -1,23 +1,31 @@
 import styled from 'styled-components/native';
-import Constants from 'expo-constants';
+import { Video } from 'expo-av';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
   flex: 1;
-  background: #000;
+  background: #fff;
 `;
-export const Select = styled.Text`
-  font-size: 22px;
-  color: #fff;
-  font-weight: bold;
-  margin: ${Constants.statusBarHeight + 10}px 0 15px 15px;
-`;
-export const Car = styled.TouchableOpacity`
+export const CarVideo = styled(Video)`
   width: 100%;
   height: 200px;
 `;
+export const CarsList = styled.ScrollView.attrs({
+  horizontal: true,
+  contentContainerStyle: {padding: 20},
+  showsHorizontalScrollIndicator: false,
+})`
+  position: absolute;
+  bottom: 0;
+`;
+export const Car = styled.TouchableHighlight`
+  width: 270px;
+  height: 150px;
+  margin-left: 6px;
+  margin-right: 6px;
+`;
 export const CarImage = styled.Image`
   flex: 1;
-  opacity: 0.6;
+  border-radius: 12px;
 `;
 export const CarName = styled.Text`
   font-size: 22px;
